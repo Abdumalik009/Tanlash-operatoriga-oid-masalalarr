@@ -1,0 +1,52 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case5 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("A ni kiriting: ");
+        double A = scanner.nextDouble();
+
+        System.out.print("B ni kiriting: ");
+        double B = scanner.nextDouble();
+
+        System.out.print("Amalni tanlang (1-qo'shish, 2-ayirish, 3-bo'lish, 4-ko'paytirish): ");
+        int amal = scanner.nextInt();
+
+        double natija = bajarAmal(A, B, amal);
+
+        System.out.println("Natija: " + natija);
+    }
+
+    static double bajarAmal(double A, double B, int amal) {
+        double natija = 0;
+
+        switch (amal) {
+            case 1:
+                natija = A + B;
+                break;
+            case 2:
+                natija = A - B;
+                break;
+            case 3:
+                if (B != 0) {
+                    natija = A / B;
+                } else {
+                    System.out.println("Noto'g'ri amal! Bo'lish paytirilgan sonni nolga bo'lib bo'lmaydi.");
+                    System.exit(0);
+                }
+                break;
+            case 4:
+                natija = A * B;
+                break;
+            default:
+                System.out.println("Noto'g'ri amal kiritildi!");
+                System.exit(0);
+        }
+
+        return natija;
+    }
+}
