@@ -1,0 +1,50 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case3 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Raqamni kiriting: ");
+        int oyRaqami = scanner.nextInt();
+
+        String fasl = aniqlaFasl(oyRaqami);
+
+        System.out.println(oyRaqami + " chi oy, \"" + fasl + "\"");
+    }
+
+    static String aniqlaFasl(int oyRaqami) {
+        String fasl = "";
+
+        switch (oyRaqami) {
+            case 12:
+            case 1:
+            case 2:
+                fasl = "qish";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                fasl = "bahor";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                fasl = "yoz";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                fasl = "kuz";
+                break;
+            default:
+                fasl = "Noto'g'ri oy raqami";
+                break;
+        }
+
+        return fasl;
+    }
+}
+
