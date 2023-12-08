@@ -1,0 +1,48 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case7 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Og'irlik birigini tanlang (1-kilogramm, 2-milligramm, 3-gramm, 4-tonna, 5-sentner): ");
+        int birlik = scanner.nextInt();
+
+        System.out.print("Og'irlikni kiriting: ");
+        double ogirlik = scanner.nextDouble();
+
+        double ogirlikKilogramda = convertToKilograms(birlik, ogirlik);
+
+        System.out.println("Og'irlik kilogramda: " + ogirlikKilogramda + " kg");
+    }
+
+    static double convertToKilograms(int birlik, double ogirlik) {
+        double ogirlikKilogramda = 0;
+
+        switch (birlik) {
+            case 1:
+                ogirlikKilogramda = ogirlik; 
+                break;
+            case 2:
+                ogirlikKilogramda = ogirlik * 0.000001; 
+                break;
+            case 3:
+                ogirlikKilogramda = ogirlik * 0.001; 
+                break;
+            case 4:
+                ogirlikKilogramda = ogirlik * 1000; 
+                break;
+            case 5:
+                ogirlikKilogramda = ogirlik * 100; 
+                break;
+            default:
+                System.out.println("Noto'g'ri og'irlik birigi kiritildi!");
+                System.exit(0);
+        }
+
+        return ogirlikKilogramda;
+    }
+}
+
