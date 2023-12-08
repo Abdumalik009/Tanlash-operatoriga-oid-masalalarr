@@ -1,0 +1,47 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case6 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Uzunlik birigini tanlang (1-desimetr, 2-kilometr, 3-metr, 4-millimeter, 5-santimetr): ");
+        int birlik = scanner.nextInt();
+
+        System.out.print("Kesma uzunligini kiriting: ");
+        double uzunlik = scanner.nextDouble();
+
+        double uzunlikMetrlarda = convertToMeters(birlik, uzunlik);
+
+        System.out.println("Kesmaning uzunligi metrlarda: " + uzunlikMetrlarda + " m");
+    }
+
+    static double convertToMeters(int birlik, double uzunlik) {
+        double uzunlikMetrlarda = 0;
+
+        switch (birlik) {
+            case 1:
+                uzunlikMetrlarda = uzunlik * 0.1; 
+                break;
+            case 2:
+                uzunlikMetrlarda = uzunlik * 1000; 
+                break;
+            case 3:
+                uzunlikMetrlarda = uzunlik;  
+                break;
+            case 4:
+                uzunlikMetrlarda = uzunlik * 0.001; 
+                break;
+            case 5:
+                uzunlikMetrlarda = uzunlik * 0.01; 
+                break;
+            default:
+                System.out.println("Noto'g'ri uzunlik birigi kiritildi!");
+                System.exit(0);
+        }
+
+        return uzunlikMetrlarda;
+    }
+}
