@@ -1,0 +1,49 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case4 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Oy raqamini kiriting: ");
+        int oyRaqami = scanner.nextInt();
+
+        int kunlarSoni = aniqlaKunlarSoni(oyRaqami);
+
+        if (kunlarSoni != -1) {
+            System.out.println(oyRaqami + " chi oyda " + kunlarSoni + " kun bor");
+        } else {
+            System.out.println("Noto'g'ri oy raqami kiritildi.");
+        }
+    }
+
+    static int aniqlaKunlarSoni(int oyRaqami) {
+        int kunlarSoni = -1;
+
+        switch (oyRaqami) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                kunlarSoni = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                kunlarSoni = 30;
+                break;
+            case 2:
+                kunlarSoni = 28; 
+                break;
+        }
+
+        return kunlarSoni;
+    }
+}
+
