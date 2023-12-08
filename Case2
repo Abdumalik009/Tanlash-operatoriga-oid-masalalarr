@@ -1,0 +1,40 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Sonni kiriting: ");
+        int K = scanner.nextInt();
+
+            String kunNom = " ";
+            switch (K) {
+
+                case 1:
+                    kunNom = "Yomon";
+                    break;
+                case 2:
+                    kunNom = "Qoniqarsiz";
+                    break;
+                case 3:
+                    kunNom = "Qoniqarli";
+                    break;
+                case 4:
+                    kunNom = "Yaxshi";
+                    break;
+                case 5:
+                    kunNom = "A'lo";
+                    break;
+
+                default:
+                    System.out.println("Noto'g'ri baho kiritdingiz.");
+                    return;
+            }
+
+            System.out.println("Siz kritgan son "+ kunNom+"ga darajaga keladi");
+
+    }
+}
