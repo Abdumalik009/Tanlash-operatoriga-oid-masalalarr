@@ -1,0 +1,93 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Robot to'rtta tomonga ko'cha oladi (s/j/q/g): ");
+        char tomong = scanner.next().charAt(0);
+
+        System.out.print("Kamandani kiriting (0, 1, 2): ");
+        int kamanda = scanner.nextInt();
+
+        char yangiTommong;
+
+        switch (tomong) {
+            case 's':
+                yangiTommong = handleShimol(kamanda);
+                break;
+            case 'j':
+                yangiTommong = handleJanub(kamanda);
+                break;
+            case 'q':
+                yangiTommong = handleSharq(kamanda);
+                break;
+            case 'g':
+                yangiTommong = handleGarb(kamanda);
+                break;
+            default:
+                System.out.println("Noto'g'ri tomonga kiritildi.");
+                return;
+        }
+
+        System.out.println("Yangi holat: " + yangiTommong);
+    }
+
+    static char handleShimol(int kamanda) {
+        switch (kamanda) {
+            case 0:
+                return 's';
+            case 1:
+                return 'q';
+            case 2:
+                return 'g';
+            default:
+                System.out.println("Noto'g'ri kamanda kiritildi.");
+                return 's';
+        }
+    }
+
+    static char handleJanub(int kamanda) {
+        switch (kamanda) {
+            case 0:
+                return 'j';
+            case 1:
+                return 'g';
+            case 2:
+                return 'q';
+            default:
+                System.out.println("Noto'g'ri kamanda kiritildi.");
+                return 'j';
+        }
+    }
+
+    static char handleSharq(int kamanda) {
+        switch (kamanda) {
+            case 0:
+                return 'q';
+            case 1:
+                return 's';
+            case 2:
+                return 'j';
+            default:
+                System.out.println("Noto'g'ri kamanda kiritildi.");
+                return 'q';
+        }
+    }
+
+    static char handleGarb(int kamanda) {
+            switch (kamanda) {
+        case 0:
+            return 'g';
+        case 1:
+            return 'j';
+        case 2:
+            return 's';
+        default:
+            System.out.println("Noto'g'ri kamanda kiritildi.");
+            return 'g';
+    }
+}
+}
