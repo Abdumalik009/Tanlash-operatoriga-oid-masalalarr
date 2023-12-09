@@ -1,0 +1,79 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Kunni kiriting (1 dan 31 gacha): ");
+        int day = scanner.nextInt();
+
+        System.out.print("Oy nomini kiriting (1 dan 12 gacha): ");
+        int month = scanner.nextInt();
+
+        System.out.print("Yilni kiriting: ");
+        int year = scanner.nextInt();
+
+        int totalDays;
+
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                totalDays = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                totalDays = 30;
+                break;
+            case 2:
+                if (isKabisaYil(year)) {
+                    totalDays = 29;
+                } else {
+                    totalDays = 28;
+                }
+                break;
+            default:
+                System.out.println("Noto'g'ri oy raqami kiritdingiz.");
+                return;
+        }
+
+        if (day < 1 || day > totalDays) {
+            System.out.println("Noto'g'ri kun kiritdingiz.");
+            return;
+        }
+
+        int kabisaYilKunlari = isKabisaYil(year) ? 366 : 365;
+
+        int kunlarSoni = calculateDays(day, month, year, kabisaYilKunlari);
+        System.out.println("Kabisa yilda " + kabisaYilKunlari + " kun, kabisa bo'lmagan yilda " +
+                "365 kun bor. Siz kiritgan sana " + kunlarSoni + " kunni ifodalaydi.");
+    }
+
+    static boolean isKabisaYil(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+    static int calculateDays(int day, int month, int year, int totalDaysInYear) {
+        int totalDays = 0;
+
+        for (int i = 1; i < month; i++) {
+            switch (i) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    totalDays += 31;
+                    break;
+                case 4: case 6: case 9: case 11:
+                    totalDays += 30;
+                    break;
+                case 2:
+                    if (isKabisaYil(year)) {
+                        totalDays += 29;
+                    } else {
+                        totalDays += 28;
+                    }
+                    break;
+            }
+        }
+
+        totalDays += day;
+        return totalDays;
+    }
+}
