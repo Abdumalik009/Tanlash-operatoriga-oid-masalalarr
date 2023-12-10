@@ -1,0 +1,42 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double a = 0, c = 0, h = 0;
+
+        System.out.print("Katetni kiriting (a): ");
+        a = scanner.nextDouble();
+
+        System.out.print("Gipotenuzani kiriting (c): ");
+        c = scanner.nextDouble();
+
+        System.out.print("Gipotenuzaga tushirilgan balandlikni kiriting (h): ");
+        h = scanner.nextDouble();
+
+        if (a == 0) {
+            a = Math.sqrt(c * c - h * h);
+        } else if (c == 0) {
+            c = Math.sqrt(a * a + h * h);
+        } else if (h == 0) {
+            h = Math.sqrt(c * c - a * a);
+        }
+
+        double b = Math.sqrt(c * c - a * a);
+        double p = a + b + c;
+        double s = 0.5 * a * h;
+
+        System.out.println("Katet (a): " + a);
+        System.out.println("Gipotenuza (c): " + c);
+        System.out.println("Gipotenuzaga tushirilgan balandlik (h): " + h);
+        System.out.println("Boshqa katet (b): " + b);
+        System.out.println("Perimetri (p): " + p);
+        System.out.println("Yuzasi (S): " + s);
+
+        scanner.close();
+    }
+}
+
