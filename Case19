@@ -1,0 +1,31 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case19 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Yilni kiriting: ");
+        int yil = scanner.nextInt();
+
+        if (yil < 1) {
+            System.out.println("Noto'g'ri yil kiritildi. Musbat son kiritilishi kerak.");
+        } else {
+            String muchal = aniqlash(yil);
+            System.out.println(yil + "-davr boshi: \"" + muchal + " yili\"");
+        }
+    }
+
+    public static String aniqlash(int yil) {
+        String[] ranglar = {"yashil", "qizil", "sariq", "oq", "qora"};
+        String[] hayvonlar = {"sichqon", "sigir", "yo'lbars", "quyon", "ajdar", "ilon", "ot", "qo'y", "maymun", "tovuq", "it", "to'ngiz"};
+
+        int rangIndex = (yil - 1) % 5;
+        int hayvonIndex = (yil - 1) % 12;
+
+        String muchal = ranglar[rangIndex] + " " + hayvonlar[hayvonIndex] + " yili";
+        return muchal;
+    }
+}
+
