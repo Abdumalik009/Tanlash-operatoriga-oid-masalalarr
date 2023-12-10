@@ -1,0 +1,40 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double a = 0, r1 = 0, r2 = 0;
+
+        
+        System.out.print("Tomonni kiriting (a): ");
+        a = scanner.nextDouble();
+
+        System.out.print("Ichki chizilgan aylananing radiusini kiriting (r1): ");
+        r1 = scanner.nextDouble();
+
+        System.out.print("Tashqi chizilgan aylananing radiusini kiriting (r2): ");
+        r2 = scanner.nextDouble();
+
+        
+        if (a == 0) {
+            a = Math.sqrt(r1 * r1 + r2 * r2);
+        } else if (r1 == 0) {
+            r1 = Math.sqrt(a * a - r2 * r2);
+        } else if (r2 == 0) {
+            r2 = Math.sqrt(a * a - r1 * r1);
+        }
+
+        double s = 0.5 * a * (r1 + r2);
+
+        System.out.println("Tomon (a): " + a);
+        System.out.println("Ichki chizilgan aylananing radiusi (r1): " + r1);
+        System.out.println("Tashqi chizilgan aylananing radiusi (r2): " + r2);
+        System.out.println("Yuzasi (S): " + s);
+
+        
+        scanner.close();
+    }
+}
