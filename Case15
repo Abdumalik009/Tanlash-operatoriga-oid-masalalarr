@@ -1,0 +1,31 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case15 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        String[] kartalar = {"", "g'isht", "olma", "chillak", "qarg'a"};
+
+        
+        String[] qiymatlar = {"", "valet", "dama", "qirol", "tuz"};
+
+        
+        System.out.print("Karta qiymati (6-14): ");
+        int N = scanner.nextInt();
+
+        System.out.print("Karta turini tanlang (1-4):\n1 - g'isht\n2 - olma\n3 - chillak\n4 - qarg'a\n");
+        int M = scanner.nextInt();
+
+        if (6 <= N && N <= 14 && 1 <= M && M <= 4) {
+            System.out.println(kartalar[M] + " " + qiymatlar[N - 10]);
+        } else {
+            System.out.println("Noto'g'ri qiymat yoki tur kiritildi.");
+        }
+
+        scanner.close();
+    }
+}
+
