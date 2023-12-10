@@ -1,0 +1,70 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case16 {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Yoshingizni kiriting: ");
+        int yosh = scanner.nextInt();
+
+        
+        String ifodalovchiSoz = ifodalovchiSozGeneratsiya(yosh);
+
+        
+        System.out.println("Sizning yoshingiz " + ifodalovchiSoz + ".");
+    }
+
+    
+    private static String ifodalovchiSozGeneratsiya(int yosh) {
+        if (yosh >= 20 || yosh <= 69) {
+            int yoshBirligi = yosh % 10;
+            int yoshOnda = yosh / 10;
+
+            String birlar;
+            String onlar;
+
+            
+            switch (yoshBirligi) {
+                case 0:
+                    birlar = "";
+                    break;
+                case 1:
+                    birlar = "bir";
+                    break;
+                case 2:
+                    birlar = "ikki";
+                    break;
+                case 3:
+                    birlar = "uch";
+                    break;
+                
+
+                default:
+                    birlar = "nol";
+                    break;
+            }
+
+            
+            switch (yoshOnda) {
+                case 2:
+                    onlar = "yigirma";
+                    break;
+                case 3:
+                    onlar = "o'ttiz";
+                    break;
+                
+                
+
+                default:
+                    onlar = "";
+                    break;
+            }
+
+            return onlar + " " + birlar + " yosh";
+        } else {
+            return "Sizning kiritgan yoshingiz 20 va 69 oralig'ida emas.";
+        }
+    }
+}
