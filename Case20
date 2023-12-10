@@ -1,0 +1,70 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case20 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Kunni kiriting (1-31): ");
+        int kun = scanner.nextInt();
+
+        System.out.print("Oy nomini kiriting (1-12): ");
+        int oy = scanner.nextInt();
+
+        if (kun < 1 || kun > 31 || oy < 1 || oy > 12) {
+            System.out.println("Noto'g'ri kun yoki oy kiritildi.");
+        } else {
+            String burj = aniqlash(kun, oy);
+            System.out.println("Sizning burjingiz: " + burj);
+        }
+    }
+
+    public static String aniqlash(int kun, int oy) {
+        String burj;
+
+        switch (oy) {
+            case 1:
+                burj = (kun >= 20) ? "Qovg'a" : "Echki";
+                break;
+            case 2:
+                burj = (kun >= 19) ? "Baliq" : "Qovg'a";
+                break;
+            case 3:
+                burj = (kun >= 21) ? "Qo'y" : "Baliq";
+                break;
+            case 4:
+                burj = (kun >= 20) ? "Buzoq" : "Qo'y";
+                break;
+            case 5:
+                burj = (kun >= 21) ? "Egizaklar" : "Buzoq";
+                break;
+            case 6:
+                burj = (kun >= 22) ? "Qisqichbaqa" : "Egizaklar";
+                break;
+            case 7:
+                burj = (kun >= 23) ? "Arslon" : "Qisqichbaqa";
+                break;
+            case 8:
+                burj = (kun >= 23) ? "Parizod" : "Arslon";
+                break;
+            case 9:
+                burj = (kun >= 23) ? "Tarozi" : "Parizod";
+                break;
+            case 10:
+                burj = (kun >= 23) ? "Chayon" : "Tarozi";
+                break;
+            case 11:
+                burj = (kun >= 23) ? "O'qotar" : "Chayon";
+                break;
+            case 12:
+                burj = (kun >= 22) ? "Echki" : "O'qotar";
+                break;
+            default:
+                burj = "Noma'lum";
+                break;
+        }
+
+        return burj;
+    }
+}
