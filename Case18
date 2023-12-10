@@ -1,0 +1,31 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case18 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Sonni kiriting (100-999 oraliqda): ");
+        int son = scanner.nextInt();
+
+        if (son < 100 || son > 999) {
+            System.out.println("Noto'g'ri son kiritildi. 100 dan katta va 999 dan kichik bo'lishi kerak.");
+        } else {
+            String sozlar = sonniSozlash(son);
+            System.out.println("Natija: " + sozlar);
+        }
+    }
+
+    public static String sonniSozlash(int son) {
+        String[] birliklar = {"", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz"};
+        String[] unliklar = {"", "o'n", "yigirma", "o'ttiz", "qirq", "ellik", "oltmish", "yetmish", "sakson", "to'qqizon"};
+
+        int yuzlik = son / 100;
+        int onlik = (son % 100) / 10;
+        int birlik = son % 10;
+
+        String sozlar = birliklar[yuzlik] + " yuz " + unliklar[onlik] + " " + birliklar[birlik];
+        return sozlar.trim();
+    }
+}
