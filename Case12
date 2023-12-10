@@ -1,0 +1,40 @@
+package Case;
+
+
+
+import java.util.Scanner;
+
+public class Case12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Radiusni kiriting: ");
+        double K = scanner.nextDouble();
+
+        System.out.println("1-Radius,2-Diametr,3-Uzunlik,4-Yuza");
+        int son = scanner.nextInt();
+
+       double sum =0;
+        switch (son) {
+            case 1:
+               sum = K;
+                break;
+            case 2:
+                sum = K*2;
+                break;
+            case 3:
+                sum = K * 2 * 3.14;
+                break;
+            case 4:
+                sum = (K*K)*3.14;
+                break;
+
+            default:
+                System.out.println("Noto'g'ri son kiritdingiz.");
+                return;
+        }
+
+        System.out.println("Mana javob: "+sum);
+    }
+}
