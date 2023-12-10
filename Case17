@@ -1,0 +1,33 @@
+package Case;
+
+import java.util.Scanner;
+
+public class Case17 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masalalar sonini kiriting (10 dan katta va 40 dan kichik): ");
+        int masalaSon = scanner.nextInt();
+
+        if (masalaSon < 10 || masalaSon > 40) {
+            System.out.println("Noto'g'ri son kiritildi. 10 dan katta va 40 dan kichik bo'lishi kerak.");
+        } else {
+            aniqlovchiDastur(masalaSon);
+        }
+    }
+
+    public static void aniqlovchiDastur(int masalaSon) {
+        String masalaSifat;
+        if (masalaSon % 10 == 0) {
+            masalaSifat = "masala";
+        } else if (masalaSon % 10 == 1) {
+            masalaSifat = "masala";
+        } else if (masalaSon % 10 > 1 && masalaSon % 10 < 5) {
+            masalaSifat = "masala";
+        } else {
+            masalaSifat = "masala";
+        }
+
+        System.out.println("Siz " + masalaSon + " " + masalaSifat + " aniqladingiz.");
+    }
+}
